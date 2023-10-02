@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import { Features, Download, SectionWrapper, Line } from "./components";
+import assets from "./assets";
+import styles from "./styles/Global";
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="space-around">
+      <div>
+        <SectionWrapper
+          title="You own store of Nifty NFTs. "
+          description="Buy,store,collect NFTs"
+          showBtn
+          mockupImg={assets.homeHero}
+          banner="banner"
+        />
+
+        <SectionWrapper
+          title="Smart User Interface Marketplace "
+          description="Experience a butter UI of"
+          mockupImg={assets.homeCards}
+          reverse
+        />
+        <Line />
+        <Features />
+        <Line />
+        <SectionWrapper
+          title="You own store of Nifty NFTs. "
+          description="Buy,store,collect NFTs"
+          mockupImg={assets.feature}
+          banner="banner"
+        />
+
+        <SectionWrapper
+          title="Smart User Interface Marketplace "
+          description="Show case the store."
+          mockupImg={assets.mockup}
+          reverse
+        />
+
+        <Download />
+      </div>
+      <div className="px-4 py-2 justify-center items-center bg-gray-900 flex-col banner04">
+        <p
+          className={`${styles.pText}
+    ${styles.whiteText}
+    `}
         >
-          Learn React
-        </a>
-      </header>
+          Made with Love by <span className="bold">JavaScript Mastery</span>
+        </p>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
